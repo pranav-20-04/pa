@@ -1,0 +1,270 @@
+Announce something to your class
+Assignment: "Improvement Tasks"
+Tanmayee Kute posted a new assignment: Improvement Tasks
+Created Apr 19Apr 19
+Assignment: "Assignment 2_Unit VI"
+Tanmayee Kute posted a new assignment: Assignment 2_Unit VI
+Created Apr 15Apr 15
+Assignment: "Assignment 1_Unit V"
+Tanmayee Kute posted a new assignment: Assignment 1_Unit V
+Created Apr 15Apr 15
+Assignment: "Unit Test and Open Book Test Question papers"
+Tanmayee Kute posted a new assignment: Unit Test and Open Book Test Question papers
+Created Apr 15Apr 15 (Edited Apr 15)
+Announcement: "PSDL Ass 10 PPTs and Videos"
+Tanmayee Kute
+Created Apr 10Apr 10
+PSDL Ass 10 PPTs and Videos
+PSDL_Ass 10.pptx
+PowerPoint
+Ass 10 implementation on Proteus video.mp4
+Video
+Add class comment…
+
+Announcement: "PSDL Ass 9 PPTs"
+Tanmayee Kute
+Created Apr 10Apr 10
+PSDL Ass 9 PPTs
+PSDL _Ass 9.pptx
+PowerPoint
+Add class comment…
+
+Announcement: "Unit VI PPTs"
+Tanmayee Kute
+Created Apr 10Apr 10
+Unit VI PPTs
+07-arm_overview.pdf
+PDF
+UNIT VI.pptx
+PowerPoint
+Add class comment…
+
+Announcement: "Unit V PPTs"
+Tanmayee Kute
+Created Apr 10Apr 10
+Unit V PPTs
+UNIT V.pptx
+PowerPoint
+Unit V_Interfacing-lect 4.pptx
+PowerPoint
+Unit V_interrupt registers-lect 2.pptx
+PowerPoint
+Unit V_Intro to Interrupts-lect 1.pptx
+PowerPoint
+Unit V_timer programming with interrupt - lect 3.pptx
+PowerPoint
+unit_6_notes.pdf
+PDF
+Add class comment…
+
+Announcement: "Unit IV PPTs"
+Tanmayee Kute
+Created Apr 10Apr 10
+Unit IV PPTs
+Unit IV_Basics of Serial communication protocols- lect 3.pptx
+PowerPoint
+Unit IV_interfacing-lect 2.pptx
+PowerPoint
+Unit IV_Intro-lect 1.pptx
+PowerPoint
+Add class comment…
+
+Assignment: "Home Assignments"
+Tanmayee Kute posted a new assignment: Home Assignments
+Created Apr 10Apr 10
+Assignment: "University Assignment No. 10"
+Tanmayee Kute posted a new assignment: University Assignment No. 10
+Created Apr 10Apr 10
+Assignment: "University Assignment No. 9"
+Tanmayee Kute posted a new assignment: University Assignment No. 9
+Created Apr 10Apr 10
+Assignment: "University Assignment No. 8"
+Tanmayee Kute posted a new assignment: University Assignment No. 8
+Created Apr 10Apr 10
+Assignment: "University Assignment No. 7"
+Tanmayee Kute posted a new assignment: University Assignment No. 7
+Created Apr 10Apr 10
+Assignment: "University Assignment No. 6"
+Tanmayee Kute posted a new assignment: University Assignment No. 6
+Created Apr 10Apr 10
+Assignment: "university Assignment No. 5"
+Tanmayee Kute posted a new assignment: university Assignment No. 5
+Created Apr 10Apr 10
+Announcement: "Ass 8_Temperature Sensor reference code"
+Tanmayee Kute
+Created Apr 10Apr 10
+Ass 8_Temperature Sensor reference code
+main.c
+C
+Add class comment…
+
+Announcement: "Ass 7_DC Motor reference Code"
+Tanmayee Kute
+Created Apr 10Apr 10
+Ass 7_DC Motor reference Code
+DCMotorCCP.c
+C
+Add class comment…
+
+Announcement: "Ass 6_LCD Interfacing reference Code"
+Tanmayee Kute
+Created Apr 10Apr 10
+Ass 6_LCD Interfacing reference Code
+lcd.c
+C
+Add class comment…
+
+Announcement: "Ass 5_Buzzer reference Code"
+Tanmayee Kute
+Created Apr 10Apr 10
+Ass 5_Buzzer reference Code
+timerBuzzer.c
+C
+Add class comment…
+
+Announcement: "Ass 4-LED Blinking Reference Code"
+Tanmayee Kute
+Created Apr 10Apr 10
+Ass 4-LED Blinking Reference Code
+LEDBlinking.c
+C
+Add class comment…
+
+Announcement: "Unit III PPTs"
+Tanmayee Kute
+Created Apr 8Apr 8
+Unit III PPTs
+Interfacing-lect 4.pptx
+PowerPoint
+interrupt registers-lect 2.pptx
+PowerPoint
+Intro to Interrupts-lect 1.pptx
+PowerPoint
+timer programming with interrupt - lect 3.pptx
+PowerPoint
+Add class comment…
+
+Assignment: "MCQ Test on Unit IV"
+Tanmayee Kute posted a new assignment: MCQ Test on Unit IV
+Created Apr 2Apr 2
+Assignment: "University Assignment No. 4"
+Tanmayee Kute posted a new assignment: University Assignment No. 4
+Created Feb 13Feb 13
+Assignment: "University Assignment No. 3"
+Tanmayee Kute posted a new assignment: University Assignment No. 3
+Created Feb 13Feb 13
+Assignment: "University Assignment No.2"
+Tanmayee Kute posted a new assignment: University Assignment No.2
+Created Feb 13Feb 13
+Assignment: "University Assignment No. 1"
+Tanmayee Kute posted a new assignment: University Assignment No. 1
+Created Feb 13Feb 13
+Assignment: "PA Home Assignment No. 2"
+Tanmayee Kute posted a new assignment: PA Home Assignment No. 2
+Created Feb 13Feb 13
+Announcement: "Unit II PPTs"
+Tanmayee Kute
+Created Feb 13Feb 13
+Unit II PPTs
+Intro to IO ports-lect 1.pptx
+PowerPoint
+IO and BIT manipulation programming-lect 2.pptx
+PowerPoint
+timer and counter - lect 3.pptx
+PowerPoint
+Add class comment…
+
+Announcement: "Steps for PIC KIT"
+Tanmayee Kute
+Created Feb 12Feb 12
+Steps for PIC KIT
+PIC KIT.docx
+Word
+Add class comment…
+
+#include <p18f4550.h>
+
+#define LCD_EN LATAbits.LA1
+#define LCD_RS LATAbits.LA0
+#define LCDPORT LATB
+
+
+void lcd_delay(unsigned int time)
+{
+ unsigned int i , j ;
+
+    for(i = 0; i < time; i++)
+    {
+            for(j=0;j<100;j++);
+    }
+}
+
+
+void SendInstruction(unsigned char command)
+{
+     LCD_RS = 0;		// RS low : Instruction
+     LCDPORT = command;
+     LCD_EN = 1;		// EN High
+     lcd_delay(10);
+     LCD_EN = 0;		// EN Low; command sampled at EN falling edge
+     lcd_delay(10);
+}
+
+void SendData(unsigned char lcddata)
+{
+     LCD_RS = 1;		// RS HIGH : DATA
+     LCDPORT = lcddata;
+     LCD_EN = 1;		// EN High
+     lcd_delay(10);
+     LCD_EN = 0;		// EN Low; data sampled at EN falling edge
+     lcd_delay(10);
+}
+
+void InitLCD(void)
+{
+    ADCON1 = 0x0F;
+    TRISB = 0x00; //set data port as output
+    TRISAbits.RA0 = 0; //RS pin
+    TRISAbits.RA1 = 0; // EN pin
+
+    SendInstruction(0x38);      //8 bit mode, 2 line,5x7 dots
+    SendInstruction(0x06);	// entry mode
+    SendInstruction(0x0C);	//Display ON cursor OFF
+    SendInstruction(0x01);      //Clear display
+    SendInstruction(0x80);      //set address to 1st line
+    
+}
+/********************************************************************************************************************/
+
+unsigned char *String1 = "Microembedded";
+unsigned char *String2 = "PIC-18F Board";
+
+void main(void)
+{
+    ADCON1 = 0x0F;
+    TRISB = 0x00;       //set data port as output
+    TRISAbits.RA0 = 0;  //RS pin
+    TRISAbits.RA1 = 0;  // EN pin
+
+    SendInstruction(0x38);      //8 bit mode, 2 line,5x7 dots
+    SendInstruction(0x06);      // entry mode
+    SendInstruction(0x0C);      //Display ON cursor OFF
+    SendInstruction(0x01);      //Clear display
+    SendInstruction(0x80);      //set address to 1st line
+
+ while(*String1)
+ {
+  SendData(*String1);
+  String1++;
+ }
+
+ SendInstruction(0xC0);      //set address to 2nd line
+ while(*String2)
+ {
+  SendData(*String2);
+  String2++;
+ }
+
+ while(1);
+ 
+}

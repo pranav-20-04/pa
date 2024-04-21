@@ -1,0 +1,15 @@
+#include<xc.h>
+void main(void){
+	unsigned int a,b,c;
+	TRISB=0;
+	LATB=0;
+	a=0x04;
+	b=0x04;
+	c=a+b;
+	PORTB=c;
+	PORTC=a;
+	PORTD=b;
+	return;
+}
+
+

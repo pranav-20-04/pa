@@ -1,0 +1,17 @@
+#incude<xc.h>
+void main(void){
+	unsigned int i;
+	int temp[5];
+	int arr1[5]={0x11,0x12,0x13,0x14,0x15};
+	int arr2[5]={0x21,0x22,0x23,0x24,0x25};
+	for(i=0;i<=4;i++){
+	temp[i]=arr1[i];
+	
+	arr1[i]=arr2[i];
+	arr2[i]=temp[i];
+		}
+return;
+}
+
+	
+
